@@ -21,9 +21,20 @@ class HomeWidget extends StatelessWidget{
         //Whatever text we want to add should be added here
       ),
       body: ListView.builder(
+
           itemCount: 30
           ,itemBuilder: (context,index){
-            return Text("data");
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text("data"),
+                FlatButton (
+                  color: Colors.blue,
+                  onPressed: () {},
+                  child: Text("SUBMIT"),
+                )
+              ],
+            );
       }
       ),
 
