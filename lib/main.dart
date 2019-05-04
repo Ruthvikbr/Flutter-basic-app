@@ -24,15 +24,24 @@ class HomeWidget extends StatelessWidget{
 
           itemCount: 30
           ,itemBuilder: (context,index){
-            return Column(
+            return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text("data"),
-                FlatButton (
-                  color: Colors.blue,
-                  onPressed: () {},
-                  child: Text("SUBMIT"),
-                )
+           Row(
+              children: <Widget>[
+                CircleAvatar(
+                  backgroundColor: Colors.red,
+                  child: Text("$index"),
+                ),
+                //CircleAvatar
+                Text("User Name"),
+              ],//Widget
+            ),//Row
+                Padding(
+        padding: const EdgeInsets.all(18.0),
+                  child: Text("2:10"),
+        ),
+
               ],
             );
       }
