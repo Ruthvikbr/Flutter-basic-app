@@ -20,18 +20,13 @@ class HomeWidget extends StatelessWidget{
         title: Text("Welcome to Flutter"),
         //Whatever text we want to add should be added here
       ),
-      body:ListView(
-        children: <Widget>[
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data")
-        ],
-      ),//Listview
+      body: ListView.builder(
+          itemCount: 30
+          ,itemBuilder: (context,index){
+            return Text("data");
+      }
+      ),
+
 floatingActionButton: FloatingActionButton(
   onPressed: (){},
   child: Icon(Icons.add),
