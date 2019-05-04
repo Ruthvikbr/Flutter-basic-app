@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
   title: "jynx",
+  theme: ThemeData(
+    primarySwatch: Colors.red,brightness: Brightness.light
+  ),
   home: HomeWidget()
 
 ));
@@ -22,32 +25,19 @@ class HomeWidget extends StatelessWidget{
       ),
       body: ListView.builder(
 
-          itemCount: 30
+          itemCount: 5
           ,itemBuilder: (context,index){
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-           Row(
-              children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: Colors.red,
-                  child: Text("$index"),
-                ),
-                //CircleAvatar
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(18.0, 0, 0, 0),
-                  child:Text("User Name"),
-                )
+            return Card(
+              child: ListTile(
+                leading: CircleAvatar(child: Text("$index")),
+                trailing: Text("2:10"),
+                title:Text("username"),
+                subtitle: Text("subtitle"),
+              ),//ListTile
+            );//Card
 
-              ],//Widget
-            ),//Row
-                Padding(
-        padding: const EdgeInsets.all(18.0),
-                  child: Text("2:10"),
-        ),
-
-              ],
-            );
+              
+         
       }
       ),
 
