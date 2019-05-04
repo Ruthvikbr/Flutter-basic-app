@@ -66,7 +66,7 @@ class _HomeWidgetState extends State<HomeWidget>{
       body: Container(
         alignment: Alignment.center,
 
-        child: apiData==null?CircularProgressIndicator:ListView.builder(
+        child: apiData==null?CircularProgressIndicator():ListView.builder(
         itemCount: apiData.length
         ,itemBuilder: (context,index){
     return ListTile(
