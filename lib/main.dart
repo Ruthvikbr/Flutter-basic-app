@@ -34,7 +34,11 @@ class HomeWidget extends StatelessWidget{
                   child: Text("$index"),
                 ),
                 //CircleAvatar
-                Text("User Name"),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(18.0, 0, 0, 0),
+                  child:Text("User Name"),
+                )
+
               ],//Widget
             ),//Row
                 Padding(
