@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'as convert;
+import 'package:flutter_app/Screens/FirstScreen.dart';
+import 'package:flutter_app/Screens/SecondScreen.dart';
 
 void main() => runApp(MaterialApp(
   title: "jynx",
@@ -58,7 +60,7 @@ class _HomeWidgetState extends State<HomeWidget>{
   @override
   Widget build(BuildContext context) {
 
-    // TODO: implement build
+
     return Scaffold(
       appBar: AppBar(
         title: Text("API DATA FLOW"),
@@ -77,13 +79,15 @@ class _HomeWidgetState extends State<HomeWidget>{
       subtitle: Text("${apiData[index]["employee_salary"]}"),
 
 
-    );//listtile
-    }),//listview
+    );//listTile
+    }),//listView
 
       ),//container
       floatingActionButton: FloatingActionButton(
           onPressed: (){
-
+      setState(() {
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstScreen()));
+      });
    },
         child: Icon(Icons.add),
       ),//FAB
