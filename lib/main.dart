@@ -23,23 +23,29 @@ class HomeWidget extends StatelessWidget{
         title: Text("Welcome to Flutter"),
         //Whatever text we want to add should be added here
       ),
-      body: ListView.builder(
+      body: 
+      Container(
+        height: 300,
+        width: 600,
+        child: Image.asset("assets/download.png",fit:BoxFit.contain),
+        
+      )
+      
+      
+      //ListView.builder(
 
-          itemCount: 5
-          ,itemBuilder: (context,index){
-            return Card(
-              child: ListTile(
-                leading: CircleAvatar(child: Text("$index")),
-                trailing: Text("2:10"),
-                title:Text("username"),
-                subtitle: Text("subtitle"),
-              ),//ListTile
-            );//Card
-
-              
-         
-      }
-      ),
+         // itemCount: 5
+          //,itemBuilder: (context,index){
+            //return Card(
+              //child: ListTile(
+                //leading: CircleAvatar(child: Text("$index")),
+                //trailing: Text("2:10"),
+                //title:Text("username"),
+                //subtitle: Text("subtitle"),
+              //),//ListTile
+            //);//Card        
+     // }
+     ,
 
 floatingActionButton: FloatingActionButton(
   onPressed: (){},
