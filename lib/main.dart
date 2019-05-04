@@ -9,49 +9,64 @@ void main() => runApp(MaterialApp(
 
 ));
 
-class HomeWidget extends StatelessWidget{
 
 
 
+class HomeWidget extends StatefulWidget{
+  @override
+  _HomeWidgetState createState()=>_HomeWidgetState();
+
+}
+class _HomeWidgetState extends State<HomeWidget>{
+  bool color=true;
   @override
   Widget build(BuildContext context) {
+
+    // TODO: implement build
     return Scaffold(
-      drawer: Drawer(),
-      //Drawer components should be added here
+      body: Container(
+        alignment: Alignment.center,
+        color: color ? Colors.blue:Colors.red,
+        child: Text(color.toString(),style: TextStyle(fontSize:22 )),//text
 
-      appBar: AppBar(
-        title: Text("Welcome to Flutter"),
-        //Whatever text we want to add should be added here
-      ),
-      body: 
-      Container(
-        height: 300,
-        width: 600,
-        child: Image.asset("assets/download.png",fit:BoxFit.contain),
-        
-      )
-      
-      
-      //ListView.builder(
+      ),//container
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            print(color);
 
-         // itemCount: 5
-          //,itemBuilder: (context,index){
-            //return Card(
-              //child: ListTile(
-                //leading: CircleAvatar(child: Text("$index")),
-                //trailing: Text("2:10"),
-                //title:Text("username"),
-                //subtitle: Text("subtitle"),
-              //),//ListTile
-            //);//Card        
-     // }
-     ,
-
-floatingActionButton: FloatingActionButton(
-  onPressed: (){},
-  child: Icon(Icons.add),
+            setState(() {
+              color=!color;
+            });
+   },
+        child: Icon(Icons.add),
       ),//FAB
-    ); //Scaffold
-    //Stateless widget is something that doesn't need UI changes
+    );//Scaffold
+  }
 
-  }}
+}
+
+
+//class homeWidget extends StatelessWidget{
+//
+//
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      drawer: Drawer(),
+//      //Drawer components should be added here
+//
+//      appBar: AppBar(
+//        title: Text("Welcome to Flutter"),
+//        //Whatever text we want to add should be added here
+//      )
+
+      
+      
+
+
+
+//    ); //Scaffold
+//    //Stateless widget is something that doesn't need UI changes
+//
+//  }}
